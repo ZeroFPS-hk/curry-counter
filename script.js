@@ -13,17 +13,28 @@ const updateLocalStorage = () => {
     localStorage.setItem('curryCounterValues', JSON.stringify(values));
 };
 
-const updateValues = () => {
-    const totalValue = Object.values(values).reduce((acc, curr) => acc + curr, 0);
+function updateValues() {
+    // Update individual values and percentages
     Object.keys(values).forEach((key) => {
-        const valueElement = document.getElementById(`${key}-value`);
-        const percentElement = document.getElementById(`${key}-percent`);
-        valueElement.textContent = values[key];
-        percentElement.textContent = totalValue ? `${((values[key] / totalValue) * 100).toFixed(2)}%` : '0%';
+        const elementValue = document.getElementById(key + "-value");
+        const elementPercent = document.getElementById(key + "-percent");
+
+        elementValue.textContent = values[key];
+        const total = Object.values(values).reduce((a, b) => a + b, 0);
+        const percent = total === 0 ? 0 : ((values[key] / total) * 100).toFixed(1);
+        elementPercent.textContent = percent + "%";
     });
-    document.getElementById('total-value').textContent = totalValue;
+
+    // Calculate and update total count, total ligma, and total credits
+    const totalCount = Object.values(values).reduce((a, b) => a + b, 0);
+    const totalLigma = (values.sussy * 0) + (values.fish * 1) + (values.veggie * 1.5) + (values.creamy * 2.5) + (values.sirloin * 4);
+    const totalCredits = (values.sussy * 0.6) + (values.fish * 0.4) + (values.veggie * 0.4) + (values.creamy * 0.2) + (values.sirloin * 0.2);
+
+    document.getElementById("total-count").textContent = totalCount;
+    document.getElementById("total-ligma").textContent = totalLigma;
+    document.getElementById("total-credits").textContent = totalCredits.toFixed(1) + " million";
     updateLocalStorage();
-};
+}
 
 document.querySelectorAll('.icon-container').forEach((container) => {
     const type = container.dataset.type;
