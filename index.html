@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curry Counter</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Curry Counter</h1>
+    </header>
+    <main>
+        <div class="icons">
+            <div class="icon-container" data-type="sussy">
+                <img src="./img/sussy.png" alt="Sussy Icon">
+                <button class="plus-button">+</button>
+                <button class="minus-button">-</button>
+            </div>
+            <div class="icon-container" data-type="fish">
+                <img src="./img/fish.png" alt="Fish Icon">
+                <button class="plus-button">+</button>
+                <button class="minus-button">-</button>
+            </div>
+            <div class="icon-container" data-type="veggie">
+                <img src="./img/veggie.png" alt="Veggie Icon">
+                <button class="plus-button">+</button>
+                <button class="minus-button">-</button>
+            </div>
+            <div class="icon-container" data-type="creamy">
+                <img src="./img/creamy.png" alt="Creamy Icon">
+                <button class="plus-button">+</button>
+                <button class="minus-button">-</button>
+            </div>
+            <div class="icon-container" data-type="sirloin">
+                <img src="./img/sirloin.png" alt="Sirloin Icon">
+                <button class="plus-button">+</button>
+                <button class="minus-button">-</button>
+            </div>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th>Percentage</th>
+                        <th>Base Probability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sussy</td>
+                        <td id="sussy-value">0</td>
+                        <td id="sussy-percent">0%</td>
+                        <td>12%</td>
+                    </tr>
+                    <tr>
+                        <td>Fish</td>
+                        <td id="fish-value">0</td>
+                        <td id="fish-percent">0%</td>
+                        <td>28%</td>
+                    </tr>
+                    <tr>
+                        <td>Veggie</td>
+                        <td id="veggie-value">0</td>
+                        <td id="veggie-percent">0%</td>
+                        <td>35%</td>
+                    </tr>
+                    <tr>
+                        <td>Creamy</td>
+                        <td id="creamy-value">0</td>
+                        <td id="creamy-percent">0%</td>
+                        <td>20%</td>
+                    </tr>
+                    <tr>
+                        <td>Sirloin</td>
+                        <td id="sirloin-value">0</td>
+                        <td id="sirloin-percent">0%</td>
+                        <td>5%</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="total-value">
+                Total: <span id="total-value">0</span>
+            </div>
+            <div class="explanation">
+                There is pity for sirloin which gradually increases its probability. For more details <a href="https://bluearchive.wiki/wiki/New_Year_March#Cooking" target="_blank" rel="noreferrer">click here</a>.
+            </div>
+        </div>
+        <button class="reset-button" onclick="confirmReset()">Reset Values</button>
+    </main>
+</body>
+</html>
